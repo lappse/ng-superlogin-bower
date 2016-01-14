@@ -368,7 +368,7 @@ angular.module('superlogin', [])
           if(!token || typeof token !== 'string') {
             return $q.reject({error: 'Invalid token'});
           }
-          return $http.get(superloginSession.getConfig().baseUrl + 'verify-email/' + token)
+          return $http.get(superloginSession.getConfig().baseUrl + 'confirm-email/' + token)
             .then(function(res) {
               return $q.when(res.data);
             }, function(err) {
